@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct ColorStyle {
+struct StyleSettings {
     var imageName: String
     var textColor: Color?
     var subTextColor: Color?
 }
 
-struct FontStyle {
+struct FontSettings {
     var sentencesFont: Font?
     var titleFont: Font?
     var authorFont: Font?
 }
 
-enum BackgroundOption: Int, CaseIterable {
+enum Style: Int, CaseIterable {
     case first = 1
     case second
     case third
@@ -46,8 +46,8 @@ enum BackgroundOption: Int, CaseIterable {
         textColor?.opacity(0.8)
     }
 
-    var style: ColorStyle {
-        ColorStyle(
+    var settings: StyleSettings {
+        StyleSettings(
             imageName: imageName,
             textColor: textColor,
             subTextColor: subTextColor
@@ -55,16 +55,23 @@ enum BackgroundOption: Int, CaseIterable {
     }
 }
 
-enum FontOption: String, CaseIterable {
-    case seoulNamsan
+enum FontStyle: String, CaseIterable {
+    case seoulNamsan = "서울남산체"
+    case koPubWorld = "KoPub 바탕체"
 
-    var style: FontStyle {
+    var settings: FontSettings {
         switch self {
         case .seoulNamsan:
-            return FontStyle(
+            return FontSettings(
                 sentencesFont: Font.custom("SeoulNamsanM", size: 18),
                 titleFont: Font.custom("SeoulNamsanL", size: 15),
                 authorFont: Font.custom("SeoulNamsanL", size: 15)
+            )
+        case .koPubWorld:
+            return FontSettings(
+                sentencesFont: Font.custom("KoPubWorldBatangM", size: 18),
+                titleFont: Font.custom("KoPubWorldBatangL", size: 15),
+                authorFont: Font.custom("KoPubWorldBatangL", size: 15)
             )
         }
     }

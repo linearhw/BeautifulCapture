@@ -15,16 +15,18 @@ private enum Placeholder: String {
 
 struct InnerContentView: View {
     @Binding var takePicture: Bool
+    @Binding var style: Style
+    @Binding var fontStyle: FontStyle
 
     @State private var sentences: String = Placeholder.sentences.rawValue
     @State private var title: String = Placeholder.title.rawValue
     @State private var author: String = Placeholder.author.rawValue
-    @State private var colorStyle = BackgroundOption.first.style
-    @State private var fontStyle = FontOption.seoulNamsan.style
     @State private var frame: CGRect = .zero
 
-    init(takePicture: Binding<Bool>) {
+    init(takePicture: Binding<Bool>, style: Binding<Style>, fontStyle: Binding<FontStyle>) {
         self._takePicture = takePicture
+        self._style = style
+        self._fontStyle = fontStyle
         UITextView.appearance().backgroundColor = .clear
     }
 
@@ -35,7 +37,7 @@ struct InnerContentView: View {
             authorView
         }
         .background {
-            Image(jpegName: colorStyle.imageName).resizable()
+            Image(jpegName: style.imageName).resizable()
         }
         .clipped()
         .aspectRatio(1, contentMode: .fit)
@@ -55,8 +57,8 @@ struct InnerContentView: View {
 
     var sentencesView: some View {
         TextEditor(text: $sentences)
-            .font(fontStyle.sentencesFont)
-            .foregroundColor(colorStyle.textColor)
+            .font(fontStyle.settings.sentencesFont)
+            .foregroundColor(style.settings.textColor)
             .padding(.top, 10)
             .lineSpacing(10)
             .disableAutocorrection(true)
@@ -69,8 +71,8 @@ struct InnerContentView: View {
 
     var titleView: some View {
         TextEditor(text: $title)
-            .font(fontStyle.titleFont)
-            .foregroundColor(colorStyle.textColor)
+            .font(fontStyle.settings.titleFont)
+            .foregroundColor(style.settings.textColor)
             .frame(maxHeight: 30)
             .disableAutocorrection(true)
             .onTapGesture {
@@ -82,8 +84,8 @@ struct InnerContentView: View {
 
     var authorView: some View {
         TextEditor(text: $author)
-            .font(fontStyle.authorFont)
-            .foregroundColor(colorStyle.subTextColor)
+            .font(fontStyle.settings.authorFont)
+            .foregroundColor(style.settings.subTextColor)
             .frame(maxHeight: 30)
             .padding(.bottom, 10)
             .disableAutocorrection(true)
@@ -95,7 +97,7 @@ struct InnerContentView: View {
     }
 }
 
-extension Image {
+private extension Image {
     init(jpegName: String) {
         guard
             let url = Bundle.main.url(forResource: jpegName, withExtension: "jpeg"),
@@ -104,5 +106,34 @@ extension Image {
             return
         }
         self.init(uiImage: image)
+    }
+}
+
+private extension View {
+    func takeScreenshot(origin: CGPoint, size: CGSize) -> UIImage {
+        let window = UIWindow(frame: CGRect(origin: origin, size: size))
+        let hosting = UIHostingController(rootView: self)
+        hosting.view.frame = window.frame
+        window.addSubview(hosting.view)
+        window.makeKeyAndVisible()
+        return hosting.view.renderedImage
+    }
+
+    func readFrame(_ onChange: @escaping (CGRect) -> Void) -> some View {
+        background(
+            GeometryReader { geometry in
+                Color.clear
+                    .preference(
+                        key: FramePreferenceKey.self,
+                        value: .init(origin: geometry.frame(in: .global).origin, size: geometry.size))
+            }
+        ).onPreferenceChange(FramePreferenceKey.self, perform: onChange)
+    }
+}
+
+private struct FramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect = .zero
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
+
     }
 }

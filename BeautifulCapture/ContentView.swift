@@ -9,53 +9,45 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var takePicture = false
+    @State private var style: Style = .first
+    @State private var fontStyle: FontStyle = .seoulNamsan
 
     var body: some View {
-        VStack(alignment: .trailing) {
-            Button("이미지로 저장") {
-                takePicture.toggle()
+        VStack {
+            HStack {
+                Spacer()
+                saveButton
             }
-                .padding(.trailing, 10)
             targetView
+            styleOptionView
         }
     }
 
+    var saveButton: some View {
+        Button("이미지로 저장") {
+            takePicture.toggle()
+        }
+        .padding(.trailing, 10)
+    }
+
     var targetView: some View {
-        InnerContentView(takePicture: $takePicture)
+        InnerContentView(
+            takePicture: $takePicture,
+            style: $style,
+            fontStyle: $fontStyle
+        )
+    }
+
+    var styleOptionView: some View {
+        StyleOptionView(
+            style: $style,
+            fontStyle: $fontStyle
+        )
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-extension View {
-    func takeScreenshot(origin: CGPoint, size: CGSize) -> UIImage {
-        let window = UIWindow(frame: CGRect(origin: origin, size: size))
-        let hosting = UIHostingController(rootView: self)
-        hosting.view.frame = window.frame
-        window.addSubview(hosting.view)
-        window.makeKeyAndVisible()
-        return hosting.view.renderedImage
-    }
-
-    func readFrame(_ onChange: @escaping (CGRect) -> Void) -> some View {
-        background(
-            GeometryReader { geometry in
-                Color.clear
-                    .preference(
-                        key: FramePreferenceKey.self,
-                        value: .init(origin: geometry.frame(in: .global).origin, size: geometry.size))
-            }
-        ).onPreferenceChange(FramePreferenceKey.self, perform: onChange)
-    }
-}
-
-private struct FramePreferenceKey: PreferenceKey {
-    static var defaultValue: CGRect = .zero
-    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
-
     }
 }
