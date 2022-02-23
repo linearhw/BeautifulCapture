@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A7065A727C51584001FA7AE /* BeautifulCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7065A627C51584001FA7AE /* BeautifulCaptureApp.swift */; };
+		4A7065A927C51584001FA7AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7065A827C51584001FA7AE /* ContentView.swift */; };
+		4A7065AB27C51586001FA7AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065AA27C51586001FA7AE /* Assets.xcassets */; };
+		4A7065AE27C51586001FA7AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065AD27C51586001FA7AE /* Preview Assets.xcassets */; };
+		4A7065B727C515CE001FA7AE /* background4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065B327C515CE001FA7AE /* background4.jpeg */; };
+		4A7065B827C515CE001FA7AE /* background2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065B427C515CE001FA7AE /* background2.jpeg */; };
+		4A7065B927C515CE001FA7AE /* background3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065B527C515CE001FA7AE /* background3.jpeg */; };
+		4A7065BA27C515CE001FA7AE /* background1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065B627C515CE001FA7AE /* background1.jpeg */; };
+		4A7065C027C51F2A001FA7AE /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7065BF27C51F2A001FA7AE /* ImageCaptureManager.swift */; };
+		4A7065C227C52B3F001FA7AE /* InnerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7065C127C52B3F001FA7AE /* InnerContentView.swift */; };
+		4A7065C527C53E50001FA7AE /* SeoulNamsanL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065C327C53E50001FA7AE /* SeoulNamsanL.ttf */; };
+		4A7065C627C53E50001FA7AE /* SeoulNamsanM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7065C427C53E50001FA7AE /* SeoulNamsanM.ttf */; };
+		4A7065C927C546F8001FA7AE /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7065C827C546F8001FA7AE /* Style.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A7065A327C51584001FA7AE /* BeautifulCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautifulCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A7065A627C51584001FA7AE /* BeautifulCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulCaptureApp.swift; sourceTree = "<group>"; };
+		4A7065A827C51584001FA7AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4A7065AA27C51586001FA7AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A7065AD27C51586001FA7AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A7065B327C515CE001FA7AE /* background4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background4.jpeg; sourceTree = "<group>"; };
+		4A7065B427C515CE001FA7AE /* background2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background2.jpeg; sourceTree = "<group>"; };
+		4A7065B527C515CE001FA7AE /* background3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background3.jpeg; sourceTree = "<group>"; };
+		4A7065B627C515CE001FA7AE /* background1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background1.jpeg; sourceTree = "<group>"; };
+		4A7065BF27C51F2A001FA7AE /* ImageCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
+		4A7065C127C52B3F001FA7AE /* InnerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerContentView.swift; sourceTree = "<group>"; };
+		4A7065C327C53E50001FA7AE /* SeoulNamsanL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SeoulNamsanL.ttf; sourceTree = "<group>"; };
+		4A7065C427C53E50001FA7AE /* SeoulNamsanM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SeoulNamsanM.ttf; sourceTree = "<group>"; };
+		4A7065C727C53E76001FA7AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4A7065C827C546F8001FA7AE /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A7065A027C51584001FA7AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A70659827C5156E001FA7AE = {
+			isa = PBXGroup;
+			children = (
+				4A7065A527C51584001FA7AE /* BeautifulCapture */,
+				4A7065B227C515BF001FA7AE /* Resources */,
+				4A7065A427C51584001FA7AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A7065A427C51584001FA7AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A7065A327C51584001FA7AE /* BeautifulCapture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A7065A527C51584001FA7AE /* BeautifulCapture */ = {
+			isa = PBXGroup;
+			children = (
+				4A7065C727C53E76001FA7AE /* Info.plist */,
+				4A7065BE27C51F14001FA7AE /* Manager */,
+				4A7065BB27C5193E001FA7AE /* Components */,
+				4A7065A627C51584001FA7AE /* BeautifulCaptureApp.swift */,
+				4A7065A827C51584001FA7AE /* ContentView.swift */,
+				4A7065AA27C51586001FA7AE /* Assets.xcassets */,
+				4A7065AC27C51586001FA7AE /* Preview Content */,
+			);
+			path = BeautifulCapture;
+			sourceTree = "<group>";
+		};
+		4A7065AC27C51586001FA7AE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4A7065AD27C51586001FA7AE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A7065B227C515BF001FA7AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A7065C327C53E50001FA7AE /* SeoulNamsanL.ttf */,
+				4A7065C427C53E50001FA7AE /* SeoulNamsanM.ttf */,
+				4A7065B627C515CE001FA7AE /* background1.jpeg */,
+				4A7065B427C515CE001FA7AE /* background2.jpeg */,
+				4A7065B527C515CE001FA7AE /* background3.jpeg */,
+				4A7065B327C515CE001FA7AE /* background4.jpeg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4A7065BB27C5193E001FA7AE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4A7065BF27C51F2A001FA7AE /* ImageCaptureManager.swift */,
+				4A7065C127C52B3F001FA7AE /* InnerContentView.swift */,
+				4A7065C827C546F8001FA7AE /* Style.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4A7065BE27C51F14001FA7AE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A7065A227C51584001FA7AE /* BeautifulCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A7065AF27C51586001FA7AE /* Build configuration list for PBXNativeTarget "BeautifulCapture" */;
+			buildPhases = (
+				4A6D893E27C66F290059EE1C /* Run Swiftlint */,
+				4A70659F27C51584001FA7AE /* Sources */,
+				4A7065A027C51584001FA7AE /* Frameworks */,
+				4A7065A127C51584001FA7AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeautifulCapture;
+			productName = BeautifulCapture;
+			productReference = 4A7065A327C51584001FA7AE /* BeautifulCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A70659927C5156E001FA7AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					4A7065A227C51584001FA7AE = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 4A70659C27C5156E001FA7AE /* Build configuration list for PBXProject "BeautifulCapture" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A70659827C5156E001FA7AE;
+			productRefGroup = 4A7065A427C51584001FA7AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A7065A227C51584001FA7AE /* BeautifulCapture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A7065A127C51584001FA7AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A7065AE27C51586001FA7AE /* Preview Assets.xcassets in Resources */,
+				4A7065BA27C515CE001FA7AE /* background1.jpeg in Resources */,
+				4A7065C527C53E50001FA7AE /* SeoulNamsanL.ttf in Resources */,
+				4A7065B727C515CE001FA7AE /* background4.jpeg in Resources */,
+				4A7065B927C515CE001FA7AE /* background3.jpeg in Resources */,
+				4A7065B827C515CE001FA7AE /* background2.jpeg in Resources */,
+				4A7065AB27C51586001FA7AE /* Assets.xcassets in Resources */,
+				4A7065C627C53E50001FA7AE /* SeoulNamsanM.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A6D893E27C66F290059EE1C /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A70659F27C51584001FA7AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A7065C227C52B3F001FA7AE /* InnerContentView.swift in Sources */,
+				4A7065A927C51584001FA7AE /* ContentView.swift in Sources */,
+				4A7065C027C51F2A001FA7AE /* ImageCaptureManager.swift in Sources */,
+				4A7065A727C51584001FA7AE /* BeautifulCaptureApp.swift in Sources */,
+				4A7065C927C546F8001FA7AE /* Style.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4A70659D27C5156E001FA7AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+			};
+			name = Debug;
+		};
+		4A70659E27C5156E001FA7AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+			};
+			name = Release;
+		};
+		4A7065B027C51586001FA7AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"BeautifulCapture/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Z575K4529;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeautifulCapture/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "멋지게 공유하기";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add to photos";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linear.BeautifulCapture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A7065B127C51586001FA7AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"BeautifulCapture/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Z575K4529;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeautifulCapture/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "멋지게 공유하기";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Add to photos";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linear.BeautifulCapture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A70659C27C5156E001FA7AE /* Build configuration list for PBXProject "BeautifulCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A70659D27C5156E001FA7AE /* Debug */,
+				4A70659E27C5156E001FA7AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A7065AF27C51586001FA7AE /* Build configuration list for PBXNativeTarget "BeautifulCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A7065B027C51586001FA7AE /* Debug */,
+				4A7065B127C51586001FA7AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A70659927C5156E001FA7AE /* Project object */;
+}
