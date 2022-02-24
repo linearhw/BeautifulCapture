@@ -76,3 +76,49 @@ enum FontStyle: String, CaseIterable {
         }
     }
 }
+
+struct StyleModifier: ViewModifier {
+    var style: Style
+
+    func body(content: Content) -> some View {
+        switch style {
+        case .first:
+            let colors = [Color(hex: 0x4771b1), Color(hex: 0x946ccc)]
+            content.background {
+                LinearGradient(
+                    gradient: Gradient(colors: colors),
+                    startPoint: .bottomLeading,
+                    endPoint: .topTrailing
+                )
+            }
+        default:
+            content.background {
+                Image(jpegName: style.imageName).resizable()
+            }
+        }
+    }
+}
+
+private extension Image {
+    init(jpegName: String) {
+        guard
+            let url = Bundle.main.url(forResource: jpegName, withExtension: "jpeg"),
+            let image = UIImage(contentsOfFile: url.path) else {
+            self.init(jpegName)
+            return
+        }
+        self.init(uiImage: image)
+    }
+}
+
+private extension Color {
+    init(hex: UInt, opacity: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue: Double((hex >> 00) & 0xff) / 255,
+            opacity: opacity
+        )
+    }
+}

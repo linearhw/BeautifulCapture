@@ -1,5 +1,5 @@
 //
-//  InnerContentView.swift
+//  CaptureTargetView.swift
 //  BeautifulCapture
 //
 //  Created by seon.yeong on 2022/02/22.
@@ -7,38 +7,27 @@
 
 import SwiftUI
 
-private enum Placeholder: String {
-    case sentences = "문장"
-    case title = "제목"
-    case author = "작가"
-}
-
-struct InnerContentView: View {
+struct CaptureTargetView: View {
     @Binding var takePicture: Bool
     @Binding var style: Style
     @Binding var fontStyle: FontStyle
 
-    @State private var sentences: String = Placeholder.sentences.rawValue
-    @State private var title: String = Placeholder.title.rawValue
-    @State private var author: String = Placeholder.author.rawValue
+    let sentences: String
+    let title: String
+    let author: String
+
     @State private var frame: CGRect = .zero
 
-    init(takePicture: Binding<Bool>, style: Binding<Style>, fontStyle: Binding<FontStyle>) {
-        self._takePicture = takePicture
-        self._style = style
-        self._fontStyle = fontStyle
-        UITextView.appearance().backgroundColor = .clear
-    }
-
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
             sentencesView
             titleView
             authorView
+                .padding(.bottom, 70)
         }
-        .background {
-            Image(jpegName: style.imageName).resizable()
-        }
+        .frame(maxWidth: .infinity)
+        .padding(30)
+        .modifier(StyleModifier(style: style))
         .clipped()
         .aspectRatio(1, contentMode: .fit)
         .readFrame { newValue in
@@ -56,56 +45,41 @@ struct InnerContentView: View {
     }
 
     var sentencesView: some View {
-        TextEditor(text: $sentences)
-            .font(fontStyle.settings.sentencesFont)
-            .foregroundColor(style.settings.textColor)
-            .padding(.top, 10)
-            .lineSpacing(10)
-            .disableAutocorrection(true)
-            .onTapGesture {
-                if self.sentences == Placeholder.sentences.rawValue {
-                    self.sentences = ""
-                }
-            }
+        HStack {
+            Text(sentences)
+                .font(fontStyle.settings.sentencesFont)
+                .foregroundColor(style.settings.textColor)
+                .lineSpacing(10)
+                .frame(maxHeight: .infinity)
+            Spacer()
+        }
     }
 
     var titleView: some View {
-        TextEditor(text: $title)
+        Text(title)
             .font(fontStyle.settings.titleFont)
             .foregroundColor(style.settings.textColor)
             .frame(maxHeight: 30)
-            .disableAutocorrection(true)
-            .onTapGesture {
-                if self.title == Placeholder.title.rawValue {
-                    self.title = ""
-                }
-            }
     }
 
     var authorView: some View {
-        TextEditor(text: $author)
+        Text(author)
             .font(fontStyle.settings.authorFont)
             .foregroundColor(style.settings.subTextColor)
             .frame(maxHeight: 30)
-            .padding(.bottom, 10)
-            .disableAutocorrection(true)
-            .onTapGesture {
-                if self.author == Placeholder.author.rawValue {
-                    self.author = ""
-                }
-            }
     }
 }
 
-private extension Image {
-    init(jpegName: String) {
-        guard
-            let url = Bundle.main.url(forResource: jpegName, withExtension: "jpeg"),
-            let image = UIImage(contentsOfFile: url.path) else {
-            self.init(jpegName)
-            return
-        }
-        self.init(uiImage: image)
+struct CaptureTargetView_Previews: PreviewProvider {
+    static var previews: some View {
+        CaptureTargetView(
+            takePicture: .constant(false),
+            style: .constant(.first),
+            fontStyle: .constant(.seoulNamsan),
+            sentences: "끝없이 새로움에 열려 있고, 자기가 아는 지식을 계속해서 수정할 수 있는 유연성을 잃지 않는 사람이야말로 지혜로운 사람이 될 확률이 높다.",
+            title: "내가 정말 좋아하는 농담",
+            author: "김하나"
+        )
     }
 }
 
